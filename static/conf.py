@@ -100,7 +100,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "monospace"
+THEME = "readable"
 
 # Below this point, everything is optional
 

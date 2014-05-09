@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 8
-_modified_time = 1399593695.53926
+_modified_time = 1399666896.852004
 _enable_loop = True
-_template_filename = u'/usr/lib/python2.7/site-packages/nikola/data/themes/base/templates/index.tmpl'
+_template_filename = u'themes/readable/templates/index.tmpl'
 _template_uri = u'index.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content']
@@ -48,12 +48,12 @@ def render_body(context,**pageargs):
         # SOURCE LINE 3
         __M_writer(u'\n')
         # SOURCE LINE 4
-        __M_writer(u'\n\n')
+        __M_writer(u'\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        # SOURCE LINE 34
+        # SOURCE LINE 28
         __M_writer(u'\n')
         return ''
     finally:
@@ -73,22 +73,20 @@ def render_content(context,**pageargs):
         site_has_comments = context.get('site_has_comments', UNDEFINED)
         index_teasers = context.get('index_teasers', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 5
+        __M_writer(u'\n')
         # SOURCE LINE 6
-        __M_writer(u'\n<div class="postindex">\n')
-        # SOURCE LINE 8
         for post in posts:
-            # SOURCE LINE 9
-            __M_writer(u'    <article class="h-entry post-')
-            __M_writer(unicode(post.meta('type')))
-            __M_writer(u'">\n    <header>\n        <h1 class="p-name entry-title"><a href="')
-            # SOURCE LINE 11
+            # SOURCE LINE 7
+            __M_writer(u'        <div class="postdiv">\n        <a href="')
+            # SOURCE LINE 8
             __M_writer(unicode(post.permalink()))
-            __M_writer(u'" class="u-url">')
+            __M_writer(u'"><h2>')
             __M_writer(unicode(post.title()))
-            __M_writer(u'</h1></a>\n        <div class="metadata">\n            <p class="byline author vcard"><span class="byline-name fn">')
-            # SOURCE LINE 13
-            __M_writer(unicode(post.author()))
-            __M_writer(u'</span></p>\n            <p class="dateline"><a href="')
+            __M_writer(u'</a></h2>\n        ')
+            # SOURCE LINE 9
+            __M_writer(unicode(post.text(teaser_only=index_teasers)))
+            __M_writer(u'\n        <p>\n        </div>\n        <div class="postmeta">\n        <small>&nbsp;\xa7&nbsp;\n            <span class="dateline"><a href="')
             # SOURCE LINE 14
             __M_writer(unicode(post.permalink()))
             __M_writer(u'" rel="bookmark"><time class="published dt-published" datetime="')
@@ -97,40 +95,29 @@ def render_content(context,**pageargs):
             __M_writer(unicode(messages("Publication date")))
             __M_writer(u'">')
             __M_writer(unicode(post.formatted_date(date_format)))
-            __M_writer(u'</time></a></p>\n')
-            # SOURCE LINE 15
+            __M_writer(u'</time></a></span>\n        </small>\n')
+            # SOURCE LINE 16
             if not post.meta('nocomments') and site_has_comments:
-                # SOURCE LINE 16
-                __M_writer(u'                <p class="commentline">')
-                __M_writer(unicode(comments.comment_link(post.permalink(), post._base_path)))
+                # SOURCE LINE 17
+                __M_writer(u'             \xb7 ')
+                __M_writer(unicode(comments.comment_link(post.permalink(), post.base_path)))
                 __M_writer(u'\n')
-            # SOURCE LINE 18
-            __M_writer(u'        </div>\n    </header>\n')
-            # SOURCE LINE 20
-            if index_teasers:
-                # SOURCE LINE 21
-                __M_writer(u'    <div class="p-summary entry-summary">\n    ')
-                # SOURCE LINE 22
-                __M_writer(unicode(post.text(teaser_only=True)))
+            # SOURCE LINE 19
+            for tag in post.tags:
+                # SOURCE LINE 20
+                __M_writer(u'             \xb7 ')
+                __M_writer(unicode(tag))
                 __M_writer(u'\n')
-                # SOURCE LINE 23
-            else:
-                # SOURCE LINE 24
-                __M_writer(u'    <div class="e-content entry-content">\n    ')
-                # SOURCE LINE 25
-                __M_writer(unicode(post.text(teaser_only=False)))
-                __M_writer(u'\n')
-            # SOURCE LINE 27
-            __M_writer(u'    </div>\n    </article>\n')
-        # SOURCE LINE 30
-        __M_writer(u'</div>\n')
-        # SOURCE LINE 31
+            # SOURCE LINE 22
+            __M_writer(u'        </div>\n        <hr>\n')
+        # SOURCE LINE 25
+        __M_writer(u'    ')
         __M_writer(unicode(helper.html_pager()))
-        __M_writer(u'\n')
-        # SOURCE LINE 32
+        __M_writer(u'\n    ')
+        # SOURCE LINE 26
         __M_writer(unicode(comments.comment_link_script()))
-        __M_writer(u'\n')
-        # SOURCE LINE 33
+        __M_writer(u'\n\t')
+        # SOURCE LINE 27
         __M_writer(unicode(helper.mathjax_script(posts)))
         __M_writer(u'\n')
         return ''
