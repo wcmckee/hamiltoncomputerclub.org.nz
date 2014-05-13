@@ -1,3 +1,11 @@
+.. title: Options now that XP has reached end of life
+.. slug: options-xp-end-life
+.. date: 05/13/2014 06:43:33 AM UTC+12:00
+.. tags: bruce, talk, xp, windows
+.. link: https://hamiltoncomputerclub.org.nz/blog/options-xp-end-life.html
+.. description:
+.. type: text
+
 title: Talk by Bruce Kingsbury
 date: Thursday 8th May 2014
 
@@ -7,9 +15,9 @@ Starts with Bruce doing a talk about
 
 Any questions? Anything interesting!?
 ROD: Figured out how to use VLC to save to harddrive. Going to write a 
-post on website. VLC - video land client.
+post on website. VLC - Video Lan client.
 
-Whats a cookie? token of data. You go to the fish and chip shop. You get a token. 
+Whats a cookie? Token of data. You go to the fish and chip shop. You get a token. 
 You go back in 15mins with your token. This is a cookie. 
 Like an advert?
 Sometimes they are useful. 
@@ -76,7 +84,7 @@ Going full screen.
 Things like accessing printers is tricky. Network share - export pdf 
 to computer
 
-problems with graphics card on virtual machine. 
+Problems with graphics card on virtual machine. 
 virtual harddrive - 25gig or so. Acts like a machine but have network 
 drive. Save files out to host operating system. 
 Running windows 7 also

@@ -1,8 +1,11 @@
 Hampug May Meetup
 =================
 
-Notes by _WCMCKEE: http://www.wcmckee.com/. 
+Hamilton PUG Meetup - IDEs are the topic. 10 talks - 5 mins each. 
+Talks went on for longer and have shifted remaining to next month.
 
+print ('silence')
+ 
 Peter starts the talk with promoting the nzpug mailing list. Asking 
 for hands of who is is on the list.
 Talk by Peter 
