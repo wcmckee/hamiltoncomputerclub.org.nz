@@ -1,3 +1,11 @@
+.. title: hampug - IDEs and Python 
+.. slug: hampug-ides-python
+.. date: 05/13/2014 10:43:33 AM UTC+12:00
+.. tags: python, hamilton, ide, talk
+.. link:
+.. description:
+.. type: text
+
 Hampug May Meetup
 =================
 
